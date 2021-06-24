@@ -104,26 +104,58 @@ console.log(a(0,10));
 //Code run: ran in browser console as exepected
 
 //11
-
-//Prediction:
-//Code run:
+function a(){
+  for(var i=0;i<10;i++){
+    for(var j=0;j<10;j++){
+      console.log(j);
+    }
+    console.log(i);
+  }
+}
+//Prediction: if i were to run this code as is, it would not run because function isnt called, 
+//Code run: ran as expected when run in browser
 
 //12
-
-//Prediction:
-//Code run:
+function a(){
+  for(var i=0;i<10; i++){
+    for(var j=0; j<0; j++){
+      console.log(i,j);
+    }
+    console.log(j,i);
+  }
+}
+//Prediction: if i were to run code as is, it would not run because function is never called, 
+//Code run: ran as expected in browser
 
 //13
-
-//Prediction:
-//Code run:
+var z = 10;
+function a(){
+  var z = 15;
+  console.log(z);
+}
+console.log(z);
+//Prediction: logs 10 to console because function is never called
+//Code run: ran as expected in browswer
 
 //14
-
-//Prediction:
+var z = 10;
+function a(){
+  var z = 15;
+  console.log(z);
+}
+a();
+console.log(z);
+//Prediction: 10, 15 - when run, function will create a var in its local scope (var z = 15) and logs its value to the console(15). then the function is done and the next console log runs and prints 10 to the console because we are outside the function. 
 //Code run:
 
 //15
-
-//Prediction:
-//Code run:
+var z = 10;
+function a(){
+  var z = 15;
+  console.log(z);
+  return z;
+}
+z = a();
+console.log(z);
+//Prediction: 15, 15 - var z is set to 10 globally, z i set to the function a(). within, a var z is set to 15. function console logs 15. returns 15 so the GLOBAL z is set to 15. then it console logs 15 again.
+//Code run: ran as expected in the browser.
